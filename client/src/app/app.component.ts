@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'The Dating Application';
   users: any;
-
   constructor(private http: HttpClient){}
 
   ngOnInit(){
     this.getUsers();
+
   }
   getUsers(){
     this.http.get('https://localhost:5001/api/Users/').subscribe({
