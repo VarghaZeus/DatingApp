@@ -1,32 +1,32 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img style="height: 40px; width: 40px;" src="../assets/icon.bmp"> Friends</a>
+      <a class="navbar-brand" routerLink='/' routerLinkActive='active'><img style="height: 40px; width: 40px;" src="../assets/icon.bmp"> Friends</a>
        <!-- Not used -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="collapseBasic" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse navbar-collapse" id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
 
         <!-- /////////////////////////////////////////// -->
-        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="accountService.curentUser$ | async">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Matches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lists</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="logout()">Logout</a>
-          </li>
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <ng-container *ngIf="accountService.curentUser$ | async">
+            <li class="nav-item">
+              <a class="nav-link" routerLink='/members' routerLinkActive='active'>Matches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink='/lists' routerLinkActive='active'>Lists</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink='/messages' routerLinkActive='active'>Messages</a>
+            </li>
+          </ng-container>
         </ul>
 
-        <div class="btn-group"  *ngIf="accountService.curentUser$ | async" dropdown>
+        <div class="btn-group"  *ngIf="(accountService.curentUser$ | async) as user" dropdown>
           <a id="button-basic" dropdownToggle type="button" class="navbar-brand dropdown-toggle"aria-controls="dropdown-basic">
-            Welcome <strong>{{model.username}}</strong>
+            Welcome <strong>{{user.username | titlecase}}</strong>
           <span class="caret"></span>
           </a>
           <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu mt-2"
@@ -35,9 +35,10 @@
              <li class="divider dropdown-divider"></li>
             <li role="menuitem"><a class="dropdown-item" href="#" (click)="logout()">Logout</a></li>
           </ul>
+
         </div>
-        <div class="container me-2 col-5" style="text-align: center;"  *ngIf="(accountService.curentUser$ | async) === null">
-        <form  #loginForm="ngForm" class="d-flex" role="search" (ngSubmit)="login()" autocomplete="off">
+        <div class="container me-auto col-10" style="text-align: center;"  *ngIf="(accountService.curentUser$ | async) === null">
+        <form  #loginForm="ngForm" class="d-flex" role="text" (ngSubmit)="login()" autocomplete="off">
           <input
            name="username"
            [(ngModel)]="model.username"
@@ -50,10 +51,10 @@
            class="form-control me-2"
            type="password"
            placeholder="Password">
-          <button class="btn btn-outline-success" type="submit">Login</button>
+          <button class="btn btn-secondary" type="submit" (click)="isCollapsed = !isCollapsed">Login</button>
         </form>
       </div>
-      </div>
+    </div>
     </div>
   </nav>
 </header>
