@@ -1,0 +1,19 @@
+.img-thumbnail{
+  margin: 0 70px;
+  width: 60%;
+  height: auto;
+  border-radius: 50%;
+}
+.card
+{
+  border-color: aqua;
+}
+
+.card-body{
+  padding: 0 25px;
+  border-top:none;
+}
+.header{
+  padding: 0 25px;
+  border-top:none;
+}
