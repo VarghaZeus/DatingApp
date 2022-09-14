@@ -25,13 +25,30 @@ export class MemberDetailComponent implements OnInit {
 
     this.galleryOptions = [
       {
-        width: '600px',
+        width: '400px',
         height: '400px',
         thumbnailsColumns: 4,
+        arrowPrevIcon: 'btn btn-sm btn-info fa fa-chevron-left',
+        arrowNextIcon: 'btn btn-sm btn-info fa fa-chevron-right',
         imagePercent: 100,
         imageAnimation: NgxGalleryAnimation.Slide,
-        preview: true
+        preview: false
       },
+          // max-width 800
+      {
+        breakpoint: 800,
+        width: '100%',
+        height: '600px',
+        imagePercent: 80,
+        thumbnailsPercent: 20,
+        thumbnailsMargin: 20,
+        thumbnailMargin: 20
+      },
+      // max-width 400
+      {
+        breakpoint: 400,
+        preview: false
+      }
     ];
 
 
@@ -41,7 +58,7 @@ getGalleryImages (): NgxGalleryImage[]{
   const imageUrl = [];
   for(const photo of this.member.photos){
     imageUrl.push({
-      samll: photo?.url,
+      small: photo?.url,
       medium: photo?.url,
       big: photo?.url
     })
