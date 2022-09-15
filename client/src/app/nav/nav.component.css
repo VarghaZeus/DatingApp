@@ -3,3 +3,9 @@
 }
 input[type="text"] { text-transform: lowercase; }
 
+img{
+  max-height: 50px;
+  border: 2px solid rgb(245, 159, 230);
+  border-radius: 50%;
+  display: inline;
+}

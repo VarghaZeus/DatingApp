@@ -1,8 +1,7 @@
 .img-thumbnail{
-  margin: 0 70px;
-  width: 60%;
-  height: auto;
-  border-radius: 50%;
+  margin: 20px;
+  width: 90%;
+  height: 90%;
 }
 .card
 {

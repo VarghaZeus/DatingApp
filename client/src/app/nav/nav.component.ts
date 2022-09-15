@@ -32,7 +32,6 @@ export class NavComponent implements OnInit {
   }
   logout()
   {
-    this.toastr.success('We miss you ' + this.model.username);
     this.router.navigateByUrl('/');
     this.accountService.logout();
   }

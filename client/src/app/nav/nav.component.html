@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand" routerLink='/' routerLinkActive='active'><img style="height: 40px; width: 40px;" src="../assets/icon.bmp"> Friends</a>
        <!-- Not used -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="collapseBasic" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed"
@@ -27,9 +27,11 @@
           </li>
         </ul>
 
-        <div class="btn-group"  *ngIf="(accountService.curentUser$ | async) as user" dropdown>
+        <div class="btn-group dropdown"  *ngIf="(accountService.curentUser$ | async) as user" dropdown>
+
+          <img src="{{user.photoUrl}}" alt="{{user.username}}" class="me-2">
           <a id="button-basic" dropdownToggle type="button" class="navbar-brand dropdown-toggle"aria-controls="dropdown-basic">
-            Welcome <strong>{{user.username | titlecase}}</strong>
+            <strong>{{user.username | titlecase}}</strong>
           <span class="caret"></span>
           </a>
           <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu mt-2"

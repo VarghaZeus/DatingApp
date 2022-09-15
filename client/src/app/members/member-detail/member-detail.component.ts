@@ -25,11 +25,11 @@ export class MemberDetailComponent implements OnInit {
 
     this.galleryOptions = [
       {
-        width: '400px',
-        height: '400px',
+        width: '500px',
+        height: '500px',
         thumbnailsColumns: 4,
-        arrowPrevIcon: 'btn btn-sm btn-info fa fa-chevron-left',
-        arrowNextIcon: 'btn btn-sm btn-info fa fa-chevron-right',
+        arrowPrevIcon: 'btn btn-sm fa fa-chevron-left',
+        arrowNextIcon: 'btn btn-sm fa fa-chevron-right',
         imagePercent: 100,
         imageAnimation: NgxGalleryAnimation.Slide,
         preview: false

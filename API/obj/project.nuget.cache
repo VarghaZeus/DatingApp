@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "V5lyr5gYyL1sQy19xdXi0Pskj6P2c+bLmwpHvHnu6TwmBQZOQ6kWy1kXUPZuDRgDDJcDpM0kNYfrSEReMAVjoA==",
+  "dgSpecHash": "zJkNDLWpLz4C1npH5TROv4RZGRW9wCX7uxCZEjdnz9QCebzVajIal74yjQkOdZNYjOrna3Czi7iitJq5tjaB5w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sahar\\Desktop\\DatingApp\\DatingApp\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sahar\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Sahar\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Sahar\\.nuget\\packages\\cloudinarydotnet\\1.11.0\\cloudinarydotnet.1.11.0.nupkg.sha512",
     "C:\\Users\\Sahar\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Sahar\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.8\\microsoft.aspnetcore.authentication.jwtbearer.6.0.8.nupkg.sha512",
     "C:\\Users\\Sahar\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -43,6 +44,7 @@
     "C:\\Users\\Sahar\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Sahar\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Sahar\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Sahar\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
     "C:\\Users\\Sahar\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\Sahar\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
     "C:\\Users\\Sahar\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",
