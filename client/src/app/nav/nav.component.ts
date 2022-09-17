@@ -25,7 +25,11 @@ export class NavComponent implements OnInit {
         this.toastr.success('Welcome ' + this.model.username);
       },err =>{
         console.log(err);
-        this.toastr.error(err.error);
+        if(err.status === 401){
+          this.toastr.error(err.error);
+        }else{
+          this.toastr.error(err);
+        }
       }
       );
     console.log(this.model);
