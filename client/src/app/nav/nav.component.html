@@ -31,7 +31,7 @@
 
           <img src="{{user.photoUrl || './assets/user.png'}}" alt="{{user.username}}" class="me-2">
           <a id="button-basic" dropdownToggle type="button" class="navbar-brand dropdown-toggle"aria-controls="dropdown-basic">
-            <strong>{{user.username | titlecase}}</strong>
+            <strong>{{user.knownAs | titlecase}}</strong>
           <span class="caret"></span>
           </a>
           <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu mt-2"
