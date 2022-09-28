@@ -1,0 +1,64 @@
+<div class="card">
+  <div class="row">
+  <div class="card-body">
+  <div class="float-start" *ngIf="messages?.length === 0">
+        No Message... Say Hi to start the conversation by using the message box below
+    </div>
+    <div>
+      <ul  *ngIf="messages?.length > 0">
+        <li  *ngFor="let message of messages">
+          <div>
+            <span class="chat-img float-start flex-row">
+              <img
+              class="img-thumbnail rounded-circle me-2"
+              style="width: 7%; height: 7%;"
+              src="{{message.senderPhotoUrl || './assets/user.png'}}"
+              alt="{{message.senderUsername}}">
+              <strong> {{message.senderUsername | titlecase}}</strong>
+            </span>
+            <div class="chat-body float-start">
+              <p class="mb-1 badge bg-dark fs-6 text-wrap"   style="inline-size: 350px;">{{message.content}}</p>
+              <div class="header">
+                <small class="text-muted">
+                  <span class="fa fa-clock-o">
+                    {{message.messageSent | timeago}}
+                  </span>
+                  <span class="text-danger"
+                  *ngIf="!message.dateRead
+                  && message.senderUsername !== username">
+                  (Unread)
+                  </span>
+                  <span class="text-success"
+                  *ngIf="message.dateRead
+                  && message.senderUsername !== username">
+                  (Read {{message.dateRead | timeago}})
+                  </span>
+                </small>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-footer">
+  </div>
+</div>
+</div>
+<form #messageForm="ngForm" (ngSubmit)="sentMessage()" autocomplete="off">
+  <div class="input-group">
+    <input
+    name="messageContent"
+    required
+    [(ngModel)]="messageContent"
+    type="text"
+    class="form-control input-sm"
+    placeholder="Type your message...">
+    <div class="input-group-addon">
+      <button [disabled]="!messageForm.valid" class="btn rounded-0 btn-primary" type="submit">
+         send
+      </button>
+    </div>
+  </div>
+</form>
